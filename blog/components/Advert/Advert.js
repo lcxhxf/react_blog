@@ -3,12 +3,11 @@ import './advert.module.css'
 
 const Advert = () => {
     return (
-        <div className="ad-div comm-box">
-            <div>111111</div>
-            {/* <div><img src="http://blogimages.jspang.com/WechatIMG12.jpeg" width="100%" /></div>
-            <div><img src="http://blogimages.jspang.com/WechatIMG12.jpeg" width="100%" /></div>
-            <div><img src="http://blogimages.jspang.com/WechatIMG12.jpeg" width="100%" /></div>
-            <div><img src="http://blogimages.jspang.com/WechatIMG12.jpeg" width="100%" /></div> */}
+        <div className='ad comm-box'>
+            <div><img src="https://s2.loli.net/2022/03/07/P1KSkurFbLNqcsV.jpg" width="100%" /></div>
+            <div><img src="https://s2.loli.net/2022/03/07/Vhx6ZUTdjOPJrkD.jpg" width="100%" /></div>
+            <div><img src="https://s2.loli.net/2022/03/07/GqM5Q4ikCYrmWRz.jpg" width="100%" /></div>
+            <div><img src="https://s2.loli.net/2022/03/07/8OmycoKwRWX73hr.jpg" width="100%" /></div>    
         </div>
     )
 }

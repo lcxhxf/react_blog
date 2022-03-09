@@ -4,6 +4,7 @@ import { Button, Row, Col, List, Icon } from 'antd'
 import Header from '../components/Header/Header'
 import Author from '../components/Author/Author'
 import Advert from '../components/Advert/Advert'
+import Footer from '../components/Footer/Footer'
 import { CalendarOutlined, FolderOutlined, FireOutlined } from '@ant-design/icons';
 
 export default function Home() {
@@ -48,6 +49,7 @@ export default function Home() {
           <Advert />
         </Col>
       </Row>
+      <Footer/>
     </div>
   )
 }
