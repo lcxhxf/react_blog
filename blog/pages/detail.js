@@ -1,5 +1,6 @@
 import Head from 'next/head'
 import { Row, Col, Breadcrumb, Affix } from 'antd'
+import axios from 'axios'
 import Header from '../components/Header/Header'
 import Author from '../components/Author/Author'
 import Advert from '../components/Advert/Advert'
@@ -67,9 +68,9 @@ export default function Detailed() {
                 React文章-增肌超人
               </div>
               <div className='list-icon center'>
-                <CalendarOutlined /><sapn>2019-06-28</sapn>
-                <FolderOutlined /><sapn>文章列表</sapn>
-                <FireOutlined /><sapn>999+</sapn>
+                <CalendarOutlined /><span>2019-06-28</span>
+                <FolderOutlined /><span>文章列表</span>
+                <FireOutlined /><span>999+</span>
               </div>
               <div className="detailed-content" >
                 <ReactMarkdown
@@ -98,4 +99,21 @@ export default function Detailed() {
       <Footer />
     </div>
   )
+}
+
+Detailed.getInitialProps = async(context)=>{
+
+  console.log(context.query.id)
+  let id =context.query.id
+  const promise = new Promise((resolve)=>{
+
+    axios('http://127.0.0.1:7001/default/getArticleById/'+id).then(
+      (res)=>{
+        // console.log(res)
+        resolve(res.data.data[0])
+      }
+    )
+  })
+
+  return await promise
 }
