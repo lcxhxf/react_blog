@@ -1,3 +1,7 @@
+/**
+ * @description 首页右侧广告组件
+ */
+
 import React from 'react';
 import './advert.module.css'
 

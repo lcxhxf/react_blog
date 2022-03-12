@@ -8,11 +8,11 @@ module.exports = {
   // }
 };
 
-module.exports.mysql = {
+module.exports.mysql = {    // mysql插件
   enable: true,
   package: 'egg-mysql'
 }
-module.exports.cors = {
+module.exports.cors = {     // cors插件
   enable: true,
   package: 'egg-cors'
 }

@@ -23,7 +23,7 @@ module.exports = appInfo => {
     // myAppName: 'egg',
   };
 
-  config.mysql = {
+  config.mysql = {    // 配置mysql数据库
     // database configuration
     client: {
       // host

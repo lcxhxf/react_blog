@@ -8,6 +8,7 @@ import Author from '../components/Author/Author'
 import Advert from '../components/Advert/Advert'
 import Footer from '../components/Footer/Footer'
 import { CalendarOutlined, FolderOutlined, FireOutlined } from '@ant-design/icons';
+import servicePath from '../config/apiUrl'
 
 export default function Home(list) {
 
@@ -56,7 +57,7 @@ export default function Home(list) {
 
 Home.getInitialProps = async () => {    // 使用axios向后端接口请求数据资源
   const promise = new Promise((resolve) => {
-    axios('http://127.0.0.1:7001/default/getArticleList').then(
+    axios(servicePath.getArticleList).then(
       (res) => {
         // console.log(res.data+'!!!!!!!!!!!!!!');
         resolve(res.data)

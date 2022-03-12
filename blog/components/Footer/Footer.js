@@ -1,3 +1,7 @@
+/**
+ * @description 首页底部组件
+ */
+
 import './footer.module.css'
 const Footer = () => {
     return (

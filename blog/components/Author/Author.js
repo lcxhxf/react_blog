@@ -1,3 +1,7 @@
+/**
+ * @description 首页右侧作者信息组件
+ */
+
 import React from 'react';
 import { Avatar, Divider} from 'antd'
 import { GithubOutlined, QqOutlined, WechatOutlined } from '@ant-design/icons';
