@@ -48,7 +48,7 @@ const Header = () => {
                     <span className="header-txt">疯狂增肌，学习前端编程，喜欢周杰伦。</span>
                 </Col>
 
-                <Col className="memu-div" xs={0} sm={0} md={14} lg={8} xl={8}>
+                <Col className="memu-div" xs={0} sm={0} md={14} lg={10} xl={10}>
                     <Menu mode="horizontal" onClick={handleClick}>
                         <Menu.Item key="0" icon={<HomeOutlined />}>
                             博客首页

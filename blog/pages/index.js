@@ -9,14 +9,30 @@ import Advert from '../components/Advert/Advert'
 import Footer from '../components/Footer/Footer'
 import { CalendarOutlined, FolderOutlined, FireOutlined } from '@ant-design/icons';
 import servicePath from '../config/apiUrl'
+import marked from 'marked'
+import hljs from "highlight.js";
+import 'highlight.js/styles/monokai-sublime.css';
 
 export default function Home(list) {
 
   // console.log(list);
   const [mylist, setMylist] = useState(list.data)
+  const renderer = new marked.Renderer()
+  marked.setOptions({                     // 自定义的Renderer渲染出的格式
+    renderer: renderer,
+    gfm: true,
+    pedantic: false,
+    sanitize: false,
+    tables: true,
+    breaks: false,
+    smartLists: true,
+    smartypants: false,
+    highlight: function (code) {          // 设置代码高亮
+      return hljs.highlightAuto(code).value;
+    }
+  });
 
 
-  
   return (
     <div >
       <Head>
@@ -33,14 +49,14 @@ export default function Home(list) {
             renderItem={item => (
               <List.Item>
                 <div className='list-title'>
-                  <Link href={{pathname:'/detail', query:{id:item.id}}}><a>{item.title}</a></Link>
+                  <Link href={{ pathname: '/detail', query: { id: item.id } }}><a>{item.title}</a></Link>
                 </div>
                 <div className='list-icon'>
                   <CalendarOutlined /><span> {item.addTime}</span>
                   <FolderOutlined /><span> {item.typeName}</span>
                   <FireOutlined /><span>{item.view_count}</span>
                 </div>
-                <div className='list-context'>{item.introduce}</div>
+                <div className='list-context' dangerouslySetInnerHTML={{__html:marked(item.introduce)}}></div>
               </List.Item>
             )}
           />
@@ -50,7 +66,7 @@ export default function Home(list) {
           <Advert />
         </Col>
       </Row>
-      <Footer/>
+      <Footer />
     </div>
   )
 }
